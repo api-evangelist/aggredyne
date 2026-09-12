@@ -1,0 +1,108 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  Live HTTPS probes of every host this record knows (aggredyne.com and www.aggredyne.com; no other
+  host appears in apis.yml, no API baseURL and no OpenAPI servers[] entry exists).
+note: >-
+  NO DOCUMENT WAS FOUND, despite every path returning HTTP 200. The aggredyne.com hosting account is
+  suspended: the origin answers every request on every path with an identical 7,768-byte cPanel
+  "Account Suspended" HTML page, and plain HTTP 302s to /cgi-sys/suspendedpage.cgi. A random control
+  path (/this-path-does-not-exist-zzz9876) returns the same 200 and the same 7,768 bytes, which
+  proves the 200s are a catch-all and not served documents. Every row below is therefore recorded as
+  a MISS (served: false) and NO WellKnown or SecurityTxt pointer is wired into apis.yml. The TLS
+  certificate on these hosts (Let's Encrypt, CN=cpanel.aggredyne.com) expired 2026-05-15, so all
+  probes required certificate verification to be disabled.
+control_probe:
+  url: https://www.aggredyne.com/this-path-does-not-exist-zzz9876
+  status: 200
+  bytes: 7768
+  body: cPanel "Account Suspended" HTML page — identical to every other path
+hosts:
+- host: www.aggredyne.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an RFC 9116 document
+  - path: /.well-known/openid-configuration
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/api-catalog
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an RFC 9727 catalog
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not JSON
+  - path: /.well-known/agent-card.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an A2A AgentCard — no a2a/ artifact written
+  - path: /.well-known/agent.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a legacy A2A AgentCard — no a2a/ artifact written
+- host: aggredyne.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an RFC 9116 document
+  - path: /.well-known/openid-configuration
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a discovery document
+  - path: /.well-known/api-catalog
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an RFC 9727 catalog
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not JSON
+  - path: /.well-known/agent-card.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not an A2A AgentCard — no a2a/ artifact written
+  - path: /.well-known/agent.json
+    status: 200
+    served: false
+    content_type: text/html
+    note: HTML suspension shell, not a legacy A2A AgentCard — no a2a/ artifact written
+summary:
+  hosts_probed: 2
+  paths_probed: 16
+  documents_served: 0

@@ -64,5 +64,21 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AggreDyne is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+AggreDyne, Inc. is a privately held Houston, Texas medical device and in vitro diagnostics
+manufacturer, founded in 2011 by Edward R. Teitel, MD, JD and Robert C. Hux, CPA, to commercialize
+the AggreGuide platelet function analyzer. Its flagship product, the AggreGuide A-100, is a benchtop
+laser light scattering aggregometer that measures platelet aggregation from a single-use disposable
+cartridge in under five minutes, assessing how well a patient is responding to antiplatelet therapy
+such as aspirin, clopidogrel, prasugrel and ticagrelor. The company holds three FDA 510(k)
+clearances under product code JOZ and its products are CE marked.
+
+AggreDyne is a diagnostic instrument and consumable manufacturer rather than a software or platform
+business. It publishes no developer program, public API, SDK, or machine-readable API contract, and
+as of 2026-09-12 its corporate website is offline behind a suspended hosting account — the origin
+answers every path on aggredyne.com and www.aggredyne.com with an identical cPanel "Account
+Suspended" page, and its TLS certificate expired 2026-05-15. See `x-coverage` in `apis.yml` for the
+full probe evidence.
+
+- Website: https://www.aggredyne.com/ (hosting account suspended as of 2026-09-12)
+- LinkedIn: https://www.linkedin.com/company/aggredyne
+- FDA 510(k) K181777 (AggreGuide A-100 ADP): https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K181777
